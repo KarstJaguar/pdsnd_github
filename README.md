@@ -17,3 +17,9 @@ https://stackoverflow.com/questions/36519086/how-to-get-rid-of-unnamed-0-column-
 in a post by cs95 dated Jan 25, 2019 and edited by smci on Dec 15, 2020.
 This code prevents an issue with an unnamed column being displayed to the user
 when individual records are displayed.
+
+Code for removing spaces in column names and for querying dataframes was
+found at https://www.geeksforgeeks.org/python-filtering-data-with-pandas-query-method/
+in a post dated August 23, 2019.
+
+df.columns =[column.replace(" ", "_") for column in df.columns]
