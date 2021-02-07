@@ -205,6 +205,10 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def get_travel_time_days(travel_time):
+    days_travel_time = int(travel_time / (3600 * 24))
+    return days_travel_time
+
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -214,7 +218,7 @@ def trip_duration_stats(df):
 
     # display total travel time
     total_travel_time = df['Trip_Duration'].sum()
-    total_travel_time_days = int(total_travel_time / (3600 * 24))
+    total_travel_time_days = get_travel_time_days(total_travel_time)
     total_travel_time_hours = int((total_travel_time % (3600 * 24)) / 3600)
     total_travel_time_minutes = int(((total_travel_time % 3600) / 60))
     total_travel_time_seconds = int(((total_travel_time % 3600) % 60))
